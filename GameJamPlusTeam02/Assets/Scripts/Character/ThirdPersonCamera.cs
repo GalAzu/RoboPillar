@@ -9,6 +9,7 @@ public class ThirdPersonCamera : MonoBehaviour
     private float yaw;
     private float pitch;
     public Vector2 pitchMinMax;
+    //public Vector2 yawMinMax;
     [SerializeField] private float mouseSensitivity;
     public float rotationSmoothTime;
     public Vector3 rotationSmoothVelocity;
@@ -28,6 +29,7 @@ public class ThirdPersonCamera : MonoBehaviour
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch += Input.GetAxis("Mouse Y") * mouseSensitivity;
         pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+        //yaw = Mathf.Clamp(yaw, yawMinMax.x, yawMinMax.y);
 
         curRotation = Vector3.SmoothDamp(curRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
 
