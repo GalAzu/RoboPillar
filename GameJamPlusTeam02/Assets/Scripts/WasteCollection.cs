@@ -1,51 +1,56 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WasteCollection : MonoBehaviour
 {
-    private float harvestTime;
-    private float curHarvestTime;
+    [SerializeField]private float harvestTime;
+    [SerializeField]private float curHarvestTime;
     [SerializeField]
     private bool onHarvest;
     private Rigidbody rb;
     public float rayDistance;
-    public LayerMask harvestable;
-    public RaycastHit ray;
-    private void Awake()
+    [SerializeField] private LayerMask rayMask;
+    Icollectible collectible;
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        harvestable = 6;
     }
     private void Update()
     {
-
-        if(Physics.Raycast(transform.position, Vector3.forward * rayDistance, out ray, harvestable))
+        var ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+        RaycastHit rayHit;
+        
+        if (Physics.Raycast(ray, out rayHit,rayDistance,rayMask ))
         {
-            Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.blue);
-            HarvestWaste();
+            Debug.Log("ray hit mask");
+            collectible = rayHit.collider.gameObject.GetComponent<Icollectible>();
+            if (collectible != null && Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                if (!onHarvest) StartCoroutine(Harvest(FinishCollecting));
+            }
         }
-        else Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * rayDistance);
     }
-
-    private void HarvestWaste()
+    private IEnumerator Harvest(Action action)
     {
-        Icollectible collectible = ray.collider.gameObject.GetComponent<Icollectible>();
-        if (collectible != null && Input.GetKeyDown(KeyCode.Mouse1))
+        Debug.Log("corutine started");
+        if(!onHarvest)
         {
             onHarvest = true;
-            curHarvestTime = harvestTime;
-            curHarvestTime -= Time.deltaTime;
-            if (curHarvestTime <= 0 && onHarvest)
-            {
-                onHarvest = false;
-                collectible.Collect();
-                rb.constraints = RigidbodyConstraints.FreezePosition;
-
-            }
-            else if (!onHarvest)
-                rb.constraints = RigidbodyConstraints.None;
-
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            yield return new WaitForSeconds(harvestTime);
+            Debug.Log("start finish loot");
+            action();
         }
+    }
+
+    private void FinishCollecting()
+    {
+        onHarvest = false;
+        collectible.Collect();
+        rb.constraints = RigidbodyConstraints.None;
     }
 }

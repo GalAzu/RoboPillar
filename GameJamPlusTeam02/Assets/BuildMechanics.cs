@@ -9,7 +9,6 @@ public class BuildMechanics : MonoBehaviour
     public float buildingCooldownTime;
     public float buildingCooldownTimer;
     private Inventory inventory;
-    public Dictionary<int, WasteInventory> wasteQuantityToBuild = new Dictionary<int, WasteInventory>();
 
     private void Start()
     {
@@ -22,19 +21,7 @@ public class BuildMechanics : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && buildingCooldownTimer <= 0)
         {
             buildingCooldownTimer = buildingCooldownTime;
-            CreateObjectAtPlace();
+            //Build
         }
-    }
-    private void CreateObjectAtPlace()
-    {
-        Vector3 transformToBuild = transform.TransformPoint(Vector3.forward * distance);
-
-        /* Instantiate(objToBuild, transformToBuild, transform.rotation);
-     }
-     public void ObjectToBuild(GameObject object)
-         ו
-     {
-
-     }*/
     }
 }

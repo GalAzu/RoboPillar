@@ -16,13 +16,16 @@ public class Inventory : MonoBehaviour
     }
     public void AddToInventory(WasteData wasteData)
     {
-        if(wasteDictionary.TryGetValue(wasteData , out WasteInventory wasteItem))
+        if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))
         {
             wasteItem.AddToStack();
         }
-        WasteInventory newWaste = new WasteInventory(wasteData);
-        inventory.Add(newWaste);
-        wasteDictionary.Add(wasteData, newWaste);
+        else
+        {
+            WasteInventory newWaste = new WasteInventory(wasteData);
+            inventory.Add(newWaste);
+            wasteDictionary.Add(wasteData, newWaste);
+        }
     }
     public void RemoveFromInventory(WasteData wasteData)
     {

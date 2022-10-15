@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class WasteData : ScriptableObject
 {
-    public enum wasteType {bolts , metals , scrapes }
+    public enum wasteType { Bolts , MetalSheet }
     public wasteType _wasteType;
     public float effectOnWorld;
-    public int placeInInventory;
-    public Sprite icon;
+    public int quantityToAdd ;
 }
