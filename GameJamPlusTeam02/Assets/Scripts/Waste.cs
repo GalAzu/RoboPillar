@@ -18,5 +18,4 @@ public class Waste : MonoBehaviour , Icollectible
         Destroy(gameObject);
         OnWasteCollected?.Invoke(wasteData);
     }
-
 }

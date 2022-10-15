@@ -13,7 +13,11 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float speedSmoothTime = 0.1f;
     public float speedSmoothVelocity;
     public float curSpeed;
-    private Rigidbody rb;
+    public Rigidbody rb;
+
+    public bool onHarvest;
+    public bool isBuilding;
+
 
     private void Awake()
     {
@@ -34,7 +38,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         if (inputDir != Vector2.zero)
         {
             float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+            if(!onHarvest && !isBuilding) transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
 
             bool running = Input.GetKey(KeyCode.LeftShift);
             float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
