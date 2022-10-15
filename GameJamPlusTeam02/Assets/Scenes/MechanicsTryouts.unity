@@ -727,6 +727,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d80db1dbc5ac734d8fcb4039599774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHarvest: 0
+  rayDistance: 6
+  harvestable:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1293297807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 2.5
-  objToBuild: {fileID: 1702370462349922132, guid: 748d08551dc8dc74694c2eaa314f9580, type: 3}
   buildingCooldownTime: 5
   buildingCooldownTimer: 0
 --- !u!1 &2115245195

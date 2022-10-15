@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildMechanics : MonoBehaviour
 {
-    
+
     public float distance;
     public float buildingCooldownTime;
     public float buildingCooldownTimer;
@@ -19,17 +19,22 @@ public class BuildMechanics : MonoBehaviour
     void Update()
     {
         buildingCooldownTimer -= Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Mouse0) && buildingCooldownTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && buildingCooldownTimer <= 0)
         {
             buildingCooldownTimer = buildingCooldownTime;
             CreateObjectAtPlace();
         }
-        print("buildingCooldownTimer " + buildingCooldownTimer.ToString());
     }
     private void CreateObjectAtPlace()
     {
         Vector3 transformToBuild = transform.TransformPoint(Vector3.forward * distance);
-        
-        Instantiate(objToBuild, transformToBuild, transform.rotation);
+
+        /* Instantiate(objToBuild, transformToBuild, transform.rotation);
+     }
+     public void ObjectToBuild(GameObject object)
+         ו
+     {
+
+     }*/
     }
 }
