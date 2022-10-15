@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BuildSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public Transform rayCastyPoint;
+    public float rayCastDistance;
+    public GameObject objToBuild;
 
     // Update is called once per frame
     void Update()
