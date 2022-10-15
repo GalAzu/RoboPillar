@@ -10,18 +10,17 @@ public class BuildMechanics : MonoBehaviour
     public float buildingCooldownTimer;
     private Inventory inventory;
 
-    private void Start()
+
+
+    private WasteInventory GetWasteInventoryItem(WasteData.wasteType waste)
     {
-        buildingCooldownTimer = buildingCooldownTime;
+        WasteInventory wasteToUse = inventory.inventory.Find(wasteParam => wasteParam.wasteData._wasteType == waste);
+        return wasteToUse;
     }
-    // Update is called once per frame
-    void Update()
+    private int GetWasteInventoryItemQuantity(WasteData.wasteType waste)
     {
-        buildingCooldownTimer -= Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Mouse0) && buildingCooldownTimer <= 0)
-        {
-            buildingCooldownTimer = buildingCooldownTime;
-            //Build
-        }
+        var wasteToCheck = inventory.inventory.Find(wasteParam => wasteParam.wasteData._wasteType == waste);
+        return wasteToCheck.stackSize;
     }
+
 }

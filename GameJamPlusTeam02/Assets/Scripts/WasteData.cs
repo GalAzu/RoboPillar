@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WasteData : ScriptableObject
 {
+    public string name;
     public enum wasteType { Bolts , MetalSheet }
     public wasteType _wasteType;
     public float effectOnWorld;

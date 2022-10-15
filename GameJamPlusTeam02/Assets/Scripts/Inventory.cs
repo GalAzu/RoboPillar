@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     {
         Waste.OnWasteCollected -= AddToInventory;
     }
+
     public void AddToInventory(WasteData wasteData)
     {
         if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))

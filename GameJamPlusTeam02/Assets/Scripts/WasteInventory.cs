@@ -6,6 +6,7 @@ using UnityEngine;
 public class WasteInventory 
 
 {
+    public string name;
     public WasteData wasteData;
     public int stackSize;
     public WasteInventory(WasteData _waste)
