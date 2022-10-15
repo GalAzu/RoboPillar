@@ -2,7 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingDatabase 
+public class CraftingRecipe
 {
-    public Dictionary<WasteInventory, int> craftingReq;
+    public WasteInventory wasteItem;
+    public int itemQty;
+    public GameObject objectToSpawn;
+
+    public GameObject(WasteInventory _wasteItem , int _itemQty)
+    {
+        wasteItem = _wasteItem;
+        itemQty = _itemQty;
+    }
 }
