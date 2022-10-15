@@ -13,15 +13,25 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float speedSmoothTime = 0.1f;
     public float speedSmoothVelocity;
     public float curSpeed;
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     private void Start()
     {
         cameraTransform = Camera.main.transform;
     }
     private void Update()
     {
+        CharacterMovement();
+    }
+    private void CharacterMovement()
+    {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
-        if(inputDir != Vector2.zero)
+        if (inputDir != Vector2.zero)
         {
             float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
@@ -30,12 +40,10 @@ public class ThirdPersonCharacter : MonoBehaviour
             float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
 
             curSpeed = Mathf.SmoothDamp(curSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime);
-            transform.Translate(transform.forward * curSpeed * Time.deltaTime, Space.World);
-
+            // transform.Translate(transform.forward * curSpeed * Time.deltaTime, Space.World);
+            Vector3 velocity = transform.forward * curSpeed;
+            transform.TransformDirection(velocity);
+            rb.velocity = velocity;
         }
-    }
-    private void CharacterMovement()
-    {
-
     }
 }
