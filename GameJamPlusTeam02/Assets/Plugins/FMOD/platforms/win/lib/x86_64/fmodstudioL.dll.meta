@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 43cc0bcbfc95efb4396cb6631c1f4855
+=======
+guid: 09a586e89890aee4aa0db53f13f09293
+>>>>>>> GameDesign
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,11 +18,16 @@ PluginImporter:
   - first:
       Any: 
     second:
+<<<<<<< HEAD
       enabled: 0
+=======
+      enabled: 1
+>>>>>>> GameDesign
       settings: {}
   - first:
       Editor: Editor
     second:
+<<<<<<< HEAD
       enabled: 1
       settings:
         CPU: x86_64
@@ -28,6 +37,11 @@ PluginImporter:
     second:
       enabled: 1
       settings: {}
+=======
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+>>>>>>> GameDesign
   userData: 
   assetBundleName: 
   assetBundleVariant: 

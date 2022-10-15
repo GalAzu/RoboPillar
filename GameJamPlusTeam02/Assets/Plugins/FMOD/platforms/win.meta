@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c66754bc90bcdd74dbacaa9bc9adf48b
+=======
+guid: a1ec2b478c8753847bbbd56b3dc17ed8
+>>>>>>> GameDesign
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

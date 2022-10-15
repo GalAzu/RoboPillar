@@ -1,9 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8105cca2fc4eb2e488e010278c3ea1bf
 folderAsset: yes
 timeCreated: 1432606678
 licenseType: Free
 DefaultImporter:
+=======
+guid: 95558c728f3f0ea4aafba06dd1251096
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> GameDesign
   userData: 
   assetBundleName: 
   assetBundleVariant: 
