@@ -10,7 +10,15 @@ public class BuildMechanics : MonoBehaviour
     public float buildingCooldownTimer;
     private Inventory inventory;
 
+    private void Start()
+    {
+        if(inventory.inventory.Contains(GetWasteInventoryItem(WasteData.wasteType.MetalSheet)) 
+            && 
+            GetWasteInventoryItem(WasteData.wasteType.MetalSheet).stackSize < 5 )
+        {
 
+        }
+    }
 
     private WasteInventory GetWasteInventoryItem(WasteData.wasteType waste)
     {
@@ -19,8 +27,10 @@ public class BuildMechanics : MonoBehaviour
     }
     private int GetWasteInventoryItemQuantity(WasteData.wasteType waste)
     {
-        var wasteToCheck = inventory.inventory.Find(wasteParam => wasteParam.wasteData._wasteType == waste);
+        WasteInventory wasteToCheck = inventory.inventory.Find(wasteParam => wasteParam.wasteData._wasteType == waste);
         return wasteToCheck.stackSize;
     }
+
+
 
 }

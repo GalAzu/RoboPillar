@@ -8,9 +8,4 @@ public class CraftingRecipe
     public int itemQty;
     public GameObject objectToSpawn;
 
-    public GameObject(WasteInventory _wasteItem , int _itemQty)
-    {
-        wasteItem = _wasteItem;
-        itemQty = _itemQty;
-    }
 }
