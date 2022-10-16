@@ -7,11 +7,11 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
-
+    public Transform player;
     public Transform soundPoint;
-    public Transform soundTransform;
     public LayerMask groundMask, playerMask;
     private Animator anim;
+    [SerializeField] private Transform sightSphereCast;
     //Patroling
     public Vector3 walkPoint;
     public bool walkPointSet;
@@ -25,39 +25,60 @@ public class EnemyAI : MonoBehaviour
     private float hearRange;
     private bool inHearingRange;
     private int soundMask;
+    public float caughtDistance;
+    public float outOfSightDistance;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        player = FindObjectOfType<ThirdPersonCharacter>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-      //  inSightRange = Physics.cast(transform.position, sightRange, playerMask);
-        if (!inSightRange) Patroling();
+        SightAlert();
+    }
+    private void SightAlert()
+    {
+        inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
+        if (inSightRange) ChasePlayer();
+        if(!inSightRange) Patroling();
     }
     private void Patroling()
     {
-        if (!walkPointSet) 
+        if (!walkPointSet)
         {
             SerachWalkPoint();
-            anim.SetBool("isMoving" , true);
+            anim.SetBool("isMoving", true);
         }
 
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
             anim.SetBool("isMoving", false);
-        } 
+        }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1)
             walkPointSet = false;
     }
+    private void ChasePlayer()
+    {
+        print("CHASE PLAYER");
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
 
-    private void SerachWalkPoint()
+        agent.SetDestination(player.position);
+        if(agent.remainingDistance < 7)
+        {
+            Debug.Log("CAUGHT");
+        }
+
+    }
+
+
+private void SerachWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -65,14 +86,14 @@ public class EnemyAI : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask))
             walkPointSet = true;
     }
-
-    private void SoundAlert ()
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(sightSphereCast.position, sightRange);
+    }
+    private void SoundAlert()
     {
         inHearingRange = Physics.CheckSphere(transform.position, hearRange, soundMask);
         agent.SetDestination(soundPoint.position);
         transform.LookAt(soundPoint);
-    }
-    private void OnDrawGizmos()
-    {
     }
 }

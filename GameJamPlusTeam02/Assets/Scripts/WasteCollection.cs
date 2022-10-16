@@ -24,6 +24,7 @@ public class WasteCollection : MonoBehaviour
         
         if (Physics.Raycast(ray, out rayHit,rayDistance,rayMask ))
         {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * rayDistance, Color.blue);
             Debug.Log("ray hit mask");
             collectible = rayHit.collider.gameObject.GetComponent<Icollectible>();
             if (collectible != null && Input.GetKeyDown(KeyCode.Mouse1))
@@ -31,7 +32,7 @@ public class WasteCollection : MonoBehaviour
                 if (!player.onHarvest) StartCoroutine(Harvest(FinishCollecting));
             }
         }
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * rayDistance);
+        else Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * rayDistance,Color.red);
     }
     private IEnumerator Harvest(Action action)
     {
