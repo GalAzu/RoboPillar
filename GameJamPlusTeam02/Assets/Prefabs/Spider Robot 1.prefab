@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmObject: {fileID: 3547344545473678073, guid: d210d31b3ba5f9440996017304b272b9, type: 3}
+  bgmScript: {fileID: 3547344545473678072, guid: d210d31b3ba5f9440996017304b272b9, type: 3}
   agent: {fileID: 0}
   player: {fileID: 0}
   soundPoint: {fileID: 0}

@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
-
-    public GameObject bgmObject;
-    private BGM bgmScript;
+    public BGM bgmScript;
     public NavMeshAgent agent;
     public Transform player;
     public Transform soundPoint;
@@ -35,14 +34,14 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
-        bgmScript = bgmObject.GetComponent<BGM>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
-      
-      
     }
-
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -65,13 +64,13 @@ public class EnemyAI : MonoBehaviour
     }
     private void Patroling()
     {
-        if (!walkPointSet)
+        if (!walkPointSet && agent.isActiveAndEnabled)
         {
             SerachWalkPoint();
             anim.SetBool("isMoving", true);
         }
 
-        if (walkPointSet)
+        if (walkPointSet && agent.isActiveAndEnabled)
         {
             agent.SetDestination(walkPoint);
             anim.SetBool("isMoving", false);
@@ -89,10 +88,11 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-           
+            
             Debug.Log("CAUGHT");
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            SceneManager.LoadScene(2);
 
         }
     }

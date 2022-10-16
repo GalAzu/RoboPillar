@@ -8,6 +8,8 @@ public class BGM : MonoBehaviour
 {
     public FMODUnity.EventReference musicPath;
     public EventInstance musicInstance;
+    public EnemyAI enemyAI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class BGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void Danger()
@@ -31,4 +33,5 @@ public class BGM : MonoBehaviour
     {
         musicInstance.setParameterByName("Danger", 0f, false);
     }
+
 }
