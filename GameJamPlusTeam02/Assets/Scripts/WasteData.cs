@@ -6,7 +6,7 @@ using UnityEngine;
 public class WasteData : ScriptableObject
 {
     public string name;
-    public enum wasteType { Bolts , MetalSheet }
+    public enum wasteType { Bolts , MetalSheet , TowerComponents }
     public wasteType _wasteType;
     public float effectOnWorld;
     public int quantityToAdd ;

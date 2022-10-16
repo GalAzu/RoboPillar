@@ -8,6 +8,10 @@ public class Inventory : MonoBehaviour
     public Dictionary<WasteData, WasteInventory> wasteDictionary = new Dictionary<WasteData, WasteInventory>();
     public int totalcapacity;
     public int curCapacity;
+    private void Awake()
+    {
+        curCapacity = totalcapacity;
+    }
     private void OnEnable()
     {
         Waste.OnWasteCollected += AddToInventory;
