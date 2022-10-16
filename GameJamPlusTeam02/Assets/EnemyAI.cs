@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
+      //  inSightRange = Physics.cast(transform.position, sightRange, playerMask);
         if (!inSightRange) Patroling();
     }
     private void Patroling()
@@ -62,5 +62,8 @@ public class EnemyAI : MonoBehaviour
         inHearingRange = Physics.CheckSphere(transform.position, hearRange, soundMask);
         agent.SetDestination(soundPoint.position);
         transform.LookAt(soundPoint);
+    }
+    private void OnDrawGizmos()
+    {
     }
 }
