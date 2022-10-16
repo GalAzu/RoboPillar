@@ -5,12 +5,13 @@ using UnityEngine;
 public class Towers : MonoBehaviour
 {
     [SerializeField] private float towerDetectionRadius;
-    [SerializeField] private List<Collider> wasteInRadius = new List<Collider>();
+    [SerializeField] public List<Collider> wasteInRadius = new List<Collider>();
     [SerializeField] private LayerMask wasteMask;
     [SerializeField] Light light;
     [SerializeField]
     private float lightOff, lightOn;
     [SerializeField]private float lightFadeRate;
+    public int wasteLeftToLight;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class Towers : MonoBehaviour
                 wasteInRadius.Add(collider);
             }
         }
+        wasteLeftToLight = getWasteInRadiusCastColliders.Length;
     }
     private void Update()
     {

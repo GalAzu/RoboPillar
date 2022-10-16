@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager instance;
+    public int towersOnMap;
+    public void Awake()
     {
-        
+        instance = this;
+        towersOnMap = FindObjectsOfType<Towers>().Length;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

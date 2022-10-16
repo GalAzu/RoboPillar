@@ -8,6 +8,7 @@ public class Waste : MonoBehaviour , Icollectible
     public static event HandleGemCollected OnWasteCollected;
     public delegate void HandleGemCollected(WasteData wasteData);
     public WasteData wasteData;
+    public Towers towerToBelong;
 
     private void Awake()
     {
@@ -17,5 +18,6 @@ public class Waste : MonoBehaviour , Icollectible
     {
         Destroy(gameObject);
         OnWasteCollected?.Invoke(wasteData);
+        towerToBelong.wasteInRadius.Remove(this.gameObject.GetComponent<Collider>());
     }
 }
