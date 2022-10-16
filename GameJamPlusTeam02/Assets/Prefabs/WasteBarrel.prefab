@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1647443992623215768}
   - component: {fileID: 2410338397066853181}
   - component: {fileID: 475069603290517495}
+  - component: {fileID: -8612771147474366107}
   m_Layer: 7
   m_Name: WasteBarrel
   m_TagString: Untagged
@@ -87,3 +88,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8612771147474366107
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132231470550887970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0684464, y: 2.9091246, z: 2.0684464}
+  m_Center: {x: 0, y: 0, z: 0}
