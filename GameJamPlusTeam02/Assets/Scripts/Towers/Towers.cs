@@ -55,8 +55,8 @@ public class Towers : MonoBehaviour
     }
     private void TurnLightOnAndOff()
     {
-        if (wasteInRadius.Count > 3) light.intensity = Mathf.Lerp(light.intensity, lightOn, lightFadeRate);
-        else if (wasteInRadius.Count < 3) light.intensity = Mathf.Lerp(light.intensity, lightOff, lightFadeRate);
+        if (wasteInRadius.Count < 3) light.intensity = Mathf.Lerp(light.intensity, lightOn, lightFadeRate);
+        else if (wasteInRadius.Count > 3) light.intensity = Mathf.Lerp(light.intensity, lightOff, lightFadeRate);
     }
 
 }
