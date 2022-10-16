@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0068593253, g: 0.007285728, b: 0.007862948, a: 1}
+  m_IndirectSpecularColor: {r: 0.002553515, g: 0.0025420731, b: 0.0025229377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
-  totalcapacity: 0
+  totalcapacity: 2
   curCapacity: 0
 --- !u!114 &580548821
 MonoBehaviour:
@@ -1085,10 +1085,10 @@ MonoBehaviour:
   harvestTime: 0
   curHarvestTime: 0
   player: {fileID: 0}
-  rayDistance: 0
+  rayDistance: 4
   rayMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &591173161
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7006514267019823540}
   - component: {fileID: 5105064182030318974}
   - component: {fileID: -4819878099645508485}
+  - component: {fileID: 8463124035979566337}
   m_Layer: 7
   m_Name: WasteBarrelRusty
   m_TagString: Untagged
@@ -101,3 +102,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
+--- !u!65 &8463124035979566337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762199522447924395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0684464, y: 2.9156368, z: 2.0684464}
+  m_Center: {x: 0, y: 0.0032560825, z: 0}
