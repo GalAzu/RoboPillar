@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject bgmObject;
+    private BGM bgmScript;
     public NavMeshAgent agent;
     public Transform player;
     public Transform soundPoint;
@@ -35,6 +37,8 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
+        bgmScript = bgmObject.GetComponent<BGM>();
+      
     }
 
     // Update is called once per frame
@@ -46,8 +50,16 @@ public class EnemyAI : MonoBehaviour
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
         inBackRange = Physics.CheckSphere(backSphereCast.position, sightRange, playerMask);
-        if (inSightRange) ChasePlayer();
-        if(!inSightRange) Patroling();
+        if (inSightRange)
+        {
+            ChasePlayer();
+            bgmScript.Danger();
+        }
+        if(!inSightRange)
+        {
+            Patroling();
+            bgmScript.SafeZone();
+        }
     }
     private void Patroling()
     {
@@ -76,6 +88,7 @@ public class EnemyAI : MonoBehaviour
         if(agent.remainingDistance < 7)
         {
             //ADD SFX FOR PLAYER DEATH
+            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             Debug.Log("CAUGHT");
         }
 

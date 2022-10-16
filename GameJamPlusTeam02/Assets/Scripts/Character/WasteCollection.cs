@@ -40,6 +40,7 @@ public class WasteCollection : MonoBehaviour
         if(!player.onHarvest)
         {
             player.onHarvest = true;
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Trash pick up", gameObject);
             player.rb.constraints = RigidbodyConstraints.FreezeAll;
             yield return new WaitForSeconds(harvestTime);
             Debug.Log("start finish loot");
@@ -50,6 +51,7 @@ public class WasteCollection : MonoBehaviour
 
     private void FinishCollecting()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Trash clean");
         player.onHarvest = false;
         collectible.Collect();
         player.rb.constraints = RigidbodyConstraints.None;
