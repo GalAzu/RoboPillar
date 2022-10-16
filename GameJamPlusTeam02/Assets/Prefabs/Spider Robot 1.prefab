@@ -256,6 +256,37 @@ Transform:
   m_Father: {fileID: 3212427219918722040}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556317856353463369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5693359347597566851}
+  m_Layer: 0
+  m_Name: backSpherePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5693359347597566851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556317856353463369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7, y: 0, z: -5.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3212427219918722040}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141423249532586860
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 2873020747326769474}
   m_LocalRotation: {x: 0, y: 0.22235687, z: 0, w: 0.97496533}
   m_LocalPosition: {x: -43.407, y: -1.563, z: -52.04}
-  m_LocalScale: {x: 1.4199998, y: 1.42, z: 1.4199998}
+  m_LocalScale: {x: 1.4199996, y: 1.42, z: 1.4199996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1370506482827550163}
@@ -461,6 +492,7 @@ Transform:
   - {fileID: 3737390064966749851}
   - {fileID: 2598906981701677488}
   - {fileID: 2814127106416007793}
+  - {fileID: 5693359347597566851}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 25.695, z: 0}
@@ -528,12 +560,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sightSphereCast: {fileID: 2814127106416007793}
+  backSphereCast: {fileID: 5693359347597566851}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 70
-  sightRange: 20.38
+  sightRange: 25.44
   inSightRange: 0
-  caughtDistance: 1
+  caughtDistance: 0
   outOfSightDistance: 20
 --- !u!1 &3060530859533302578
 GameObject:

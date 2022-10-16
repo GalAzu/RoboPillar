@@ -2846,10 +2846,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1334063776}
     m_Modifications:
-    - target: {fileID: 494739495515256055, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
-      propertyPath: caughtDistance
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2873020747326769474, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
       propertyPath: m_Name
       value: Spider Robot 1 (2)
@@ -2857,14 +2853,6 @@ PrefabInstance:
     - target: {fileID: 3212427219918722040, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212427219918722040, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4199996
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212427219918722040, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4199996
       objectReference: {fileID: 0}
     - target: {fileID: 3212427219918722040, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
       propertyPath: m_LocalPosition.x

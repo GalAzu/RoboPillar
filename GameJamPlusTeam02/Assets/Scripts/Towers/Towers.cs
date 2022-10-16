@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Towers : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class Towers : MonoBehaviour
     private float lightOff, lightOn;
     [SerializeField]private float lightFadeRate;
     public int wasteLeftToLight;
+    public int towerWaste;
+    private TextMeshProUGUI towerUI;
+    private bool towerIsLit;
 
     private void Start()
     {
@@ -23,9 +28,22 @@ public class Towers : MonoBehaviour
             {
                 wasteInRadius.Add(collider);
             }
+            else if(collider.tag == "Player")
+            {
+                ShowUI();
+            }
         }
+        towerWaste = getWasteInRadiusCastColliders.Length;
         wasteLeftToLight = getWasteInRadiusCastColliders.Length;
     }
+
+    private void ShowUI()
+    {
+        if (!towerIsLit)
+            towerUI.text = wasteLeftToLight.ToString() + "/" + towerWaste;
+        else towerUI.text = "Tower is Lit!";
+    }
+
     private void Update()
     {
         TurnLightOnAndOff();

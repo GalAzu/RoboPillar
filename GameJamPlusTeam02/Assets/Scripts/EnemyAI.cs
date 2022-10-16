@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     public LayerMask groundMask, playerMask;
     private Animator anim;
     [SerializeField] private Transform sightSphereCast;
+    [SerializeField] private Transform backSphereCast;
     //Patroling
     public Vector3 walkPoint;
     public bool walkPointSet;
@@ -20,6 +21,7 @@ public class EnemyAI : MonoBehaviour
     //sight state
     public float sightRange;
     public bool inSightRange;
+    private object inBackRange;
 
     //sound state
     private float hearRange;
@@ -43,6 +45,7 @@ public class EnemyAI : MonoBehaviour
     private void SightAlert()
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
+        inBackRange = Physics.CheckSphere(backSphereCast.position, sightRange, playerMask);
         if (inSightRange) ChasePlayer();
         if(!inSightRange) Patroling();
     }
@@ -87,9 +90,11 @@ private void SerachWalkPoint()
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask))
             walkPointSet = true;
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(sightSphereCast.position, sightRange);
+        Gizmos.DrawWireSphere(backSphereCast.position, sightRange);
+
     }
     private void SoundAlert()
     {
