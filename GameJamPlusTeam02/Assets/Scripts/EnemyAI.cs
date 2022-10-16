@@ -85,16 +85,13 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
 
         agent.SetDestination(player.position);
-        if(agent.remainingDistance < 7)
+        if(agent.remainingDistance < caughtDistance)
         {
             //ADD SFX FOR PLAYER DEATH
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             Debug.Log("CAUGHT");
         }
-
     }
-
-
 private void SerachWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
