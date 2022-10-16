@@ -64,6 +64,7 @@ public class BuildMechanics : MonoBehaviour
         {
             //BUILD START
             Debug.Log("start corutine");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Build");
             player.isBuilding = true;
             player.rb.constraints = RigidbodyConstraints.FreezeAll;
             yield return new WaitForSeconds(buildTime);
@@ -71,7 +72,9 @@ public class BuildMechanics : MonoBehaviour
             player.isBuilding = false;
             player.rb.constraints = RigidbodyConstraints.None;
             Debug.Log("finish corutine");
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Wall", gameObject);
             //BUILD FINISH
+
 
         }
     }
