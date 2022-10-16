@@ -87,11 +87,9 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-
             GameManager.instance.GameOver();
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             AudioManager.instance.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-
         }
     }
 private void SerachWalkPoint()

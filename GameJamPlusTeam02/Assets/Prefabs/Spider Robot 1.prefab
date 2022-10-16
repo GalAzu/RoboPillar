@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341144210436580507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.19, y: 0, z: 17.02}
+  m_LocalPosition: {x: -2.3, y: 0, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556317856353463369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7, y: 0, z: -5.8}
+  m_LocalPosition: {x: -0.4, y: 0, z: 0.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2873020747326769474}
   m_LocalRotation: {x: 0, y: 0.22235687, z: 0, w: 0.97496533}
-  m_LocalPosition: {x: -43.407, y: -1.563, z: -52.04}
+  m_LocalPosition: {x: -43.407, y: -1.563, z: -52.03}
   m_LocalScale: {x: 1.4199996, y: 1.42, z: 1.4199996}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -526,16 +526,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 2873020747326769474}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 4
+  m_Radius: 0.89
+  m_Speed: 4.11
+  m_Acceleration: 5.68
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.46
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -566,10 +566,10 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 70
-  sightRange: 25.44
+  sightRange: 8
   inSightRange: 1
-  caughtDistance: 0.05
-  outOfSightDistance: 20
+  caughtDistance: 0.47
+  outOfSightDistance: 25
 --- !u!135 &3368968447491960841
 SphereCollider:
   m_ObjectHideFlags: 0
