@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.002553515, g: 0.0025420731, b: 0.0025229377, a: 1}
+  m_IndirectSpecularColor: {r: 0.0068593253, g: 0.007285728, b: 0.007862948, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -379,9 +379,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69521578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.144843, y: 27.405209, z: -5.292424}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.68462664, z: -0, w: -0.72889394}
+  m_LocalPosition: {x: -41.48899, y: 27.287598, z: 78.66493}
+  m_LocalScale: {x: 0.876117, y: 0.8761171, z: 0.876117}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 242458881}
@@ -404,8 +404,8 @@ Transform:
   - {fileID: 599467515}
   - {fileID: 802341790}
   - {fileID: 1606338959}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 131829124}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &71972416
 PrefabInstance:
@@ -938,7 +938,7 @@ Transform:
   - {fileID: 989191607}
   - {fileID: 1699792010}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &428445125
 PrefabInstance:
@@ -1732,7 +1732,7 @@ Transform:
   - {fileID: 328426261}
   - {fileID: 73208112}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1029199969
 PrefabInstance:
@@ -1966,7 +1966,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1317643444
 MonoBehaviour:
@@ -2031,7 +2031,7 @@ Transform:
   - {fileID: 622922999}
   - {fileID: 1286960144}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1354157314 stripped
 Transform:
@@ -2344,7 +2344,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1558062541 stripped
 Transform:
