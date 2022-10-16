@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour
     public Transform soundPoint;
     public LayerMask groundMask, playerMask;
     private Animator anim;
+    public GameObject bgmObject;
+    private BGM bgmScript;
+    public EnemySteps enemySteps;
     [SerializeField] private Transform sightSphereCast;
     //Patroling
     public Vector3 walkPoint;
@@ -33,6 +36,7 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
+        bgmScript = bgmObject.GetComponent<BGM>();
     }
 
     // Update is called once per frame
@@ -43,8 +47,16 @@ public class EnemyAI : MonoBehaviour
     private void SightAlert()
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
-        if (inSightRange) ChasePlayer();
-        if(!inSightRange) Patroling();
+        if (inSightRange)
+        {
+            ChasePlayer();
+            bgmScript.Danger();
+        }
+        if (!inSightRange)
+        {
+            Patroling();
+            bgmScript.SafeZone();
+        }
     }
     private void Patroling()
     {
@@ -52,12 +64,15 @@ public class EnemyAI : MonoBehaviour
         {
             SerachWalkPoint();
             anim.SetBool("isMoving", true);
+          
+
         }
 
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
             anim.SetBool("isMoving", false);
+            
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -67,12 +82,15 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         print("CHASE PLAYER");
+      
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
 
         agent.SetDestination(player.position);
         if(agent.remainingDistance < 7)
         {
             //ADD SFX FOR PLAYER DEATH
+            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
+            bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             Debug.Log("CAUGHT");
         }
 
