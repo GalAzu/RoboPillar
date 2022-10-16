@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1647443992623215768}
   - component: {fileID: 2410338397066853181}
   - component: {fileID: 475069603290517495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WasteBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

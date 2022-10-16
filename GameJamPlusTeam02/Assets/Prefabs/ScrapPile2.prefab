@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8064561936529565061}
   - component: {fileID: 8766762738203903985}
   - component: {fileID: 5774241903190837611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2151017409090971672}
   - component: {fileID: 5506519994736673615}
   - component: {fileID: 6905334343562486607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772636244199168095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScrapPile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 7949531347424406885}
   - component: {fileID: 780850721195126693}
   - component: {fileID: 5904292305716565774}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 6791621585322650058}
   - component: {fileID: 5471913179575664123}
   - component: {fileID: 6819579438859682060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Landscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}

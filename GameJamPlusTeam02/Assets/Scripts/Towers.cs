@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Towers : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float towerDetectionRadius;
+    [SerializeField] private List<Collider> wasteInRadius = new List<Collider>();
+    [SerializeField] private LayerMask wasteMask;
+
+    private void Start()
     {
-        
+        var getWasteInRadiusCast = Physics.SphereCastAll(transform.position, towerDetectionRadius, Vector3.zero, wasteMask);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.DrawWireSphere(transform.position, towerDetectionRadius);
     }
 }
