@@ -14,6 +14,8 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float speedSmoothVelocity;
     public float curSpeed;
     public Rigidbody rb;
+    public FMOD.Studio.EventInstance trainSFXLoop;
+
 
     public bool onHarvest;
     public bool isBuilding;
@@ -37,6 +39,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         Vector2 inputDir = input.normalized;
         if (inputDir != Vector2.zero)
         {
+          //  trainSFXLoop.start();
             float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             if(!onHarvest && !isBuilding) transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Waste
   m_EditorClassIdentifier: 
   name: 
-  _wasteType: 0
+  _wasteType: 1
   effectOnWorld: 0
-  quantityToAdd: 0
+  quantityToAdd: 5
