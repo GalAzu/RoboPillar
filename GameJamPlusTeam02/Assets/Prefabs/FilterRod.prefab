@@ -264,6 +264,8 @@ GameObject:
   - component: {fileID: 6049794169886416303}
   - component: {fileID: 7231360620610720266}
   - component: {fileID: 4881342766100047552}
+  - component: {fileID: 9052192893497276558}
+  - component: {fileID: 652622437915014604}
   m_Layer: 0
   m_Name: FilterRod
   m_TagString: Untagged
@@ -341,6 +343,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9052192893497276558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394828974073005845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22917a0fe5148d4985de771058484b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerDetectionRadius: 440.5
+  wasteInRadius: []
+  wasteMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!64 &652622437915014604
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394828974073005845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7517774898386527789, guid: 0d9cfaf7a27460048b3573e836c6a12e, type: 3}
 --- !u!1 &7436007791603250369
 GameObject:
   m_ObjectHideFlags: 0

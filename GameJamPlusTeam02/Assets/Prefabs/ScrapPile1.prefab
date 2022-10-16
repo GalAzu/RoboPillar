@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562568071731343982}
-  m_Layer: 0
+  - component: {fileID: 5788204937442669283}
+  m_Layer: 7
   m_Name: ScrapPile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -122.348, z: 0}
+--- !u!65 &5788204937442669283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902254855101720788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2507078987731169939
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +60,7 @@ GameObject:
   - component: {fileID: 3336128203273585193}
   - component: {fileID: 9222996835308218750}
   - component: {fileID: 7800534707935660414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +143,7 @@ GameObject:
   - component: {fileID: 6664949599972593588}
   - component: {fileID: 5349273878244027840}
   - component: {fileID: 7185359519530689370}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +226,7 @@ GameObject:
   - component: {fileID: 7914253747563037691}
   - component: {fileID: 8675507420038305738}
   - component: {fileID: 7868280430364896061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Landscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +309,7 @@ GameObject:
   - component: {fileID: 6757603581258680148}
   - component: {fileID: 4126317172688799124}
   - component: {fileID: 7090353095200898367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Towers : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float towerDetectionRadius;
+    [SerializeField] private List<Collider> wasteInRadius = new List<Collider>();
+    [SerializeField] private LayerMask wasteMask;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        Collider[] getWasteInRadiusCastColliders = Physics.OverlapSphere(transform.position, towerDetectionRadius, wasteMask);
+        foreach(var collider in getWasteInRadiusCastColliders)
+        {
+            if(collider != null)
+            {
+                wasteInRadius.Add(collider);
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, towerDetectionRadius);
         
     }
 }

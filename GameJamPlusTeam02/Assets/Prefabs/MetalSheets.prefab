@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1340027240222501071}
   - component: {fileID: 2681717903681660778}
   - component: {fileID: 203672917447332768}
+  - component: {fileID: -2064782337776820459}
   m_Layer: 0
   m_Name: MetalSheets
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2064782337776820459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860948719860413045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1517055, y: 2.63, z: 2.9}
+  m_Center: {x: 0.2709439, y: 1.32, z: -0.45099398}

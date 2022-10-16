@@ -14,7 +14,6 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float speedSmoothVelocity;
     public float curSpeed;
     public Rigidbody rb;
-
     public bool onHarvest;
     public bool isBuilding;
 
