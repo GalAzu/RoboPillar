@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0068593253, g: 0.007285728, b: 0.007862948, a: 1}
+  m_IndirectSpecularColor: {r: 0.002553515, g: 0.0025420731, b: 0.0025229377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1084,11 +1084,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestTime: 0
   curHarvestTime: 0
-  player: {fileID: 0}
-  rayDistance: 0
+  player: {fileID: 580548822}
+  rayDistance: 4
   rayMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+--- !u!114 &580548822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 580548809, guid: 6b149646dadf2b0419c8ebb0da1ce6fd, type: 3}
+  m_PrefabInstance: {fileID: 428445125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580548808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efb1394caec91e45bf4c2b3b82e1805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &591173161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,7 +2321,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 0ac82103a67eea7489c92973cfe90473, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 09c91139c1664d04ab53fcb351041af1, type: 2}
 --- !u!1 &1334063775
 GameObject:
   m_ObjectHideFlags: 0

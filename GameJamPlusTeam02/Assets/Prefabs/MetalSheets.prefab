@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1340027240222501071}
   - component: {fileID: 2681717903681660778}
   - component: {fileID: 203672917447332768}
-  m_Layer: 0
+  - component: {fileID: 2557170576828583424}
+  - component: {fileID: 4363735875453319480}
+  m_Layer: 7
   m_Name: MetalSheets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2557170576828583424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860948719860413045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4e2b8b2b3a90a4c892795834d692a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasteData: {fileID: 0}
+--- !u!65 &4363735875453319480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860948719860413045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1517053, y: 3.0853724, z: 2.9019878}
+  m_Center: {x: 0.27094385, y: 1.5426862, z: -0.45099398}

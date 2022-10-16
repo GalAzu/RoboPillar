@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2410338397066853181}
   - component: {fileID: 475069603290517495}
   - component: {fileID: -8612771147474366107}
+  - component: {fileID: 311578497126663186}
   m_Layer: 7
   m_Name: WasteBarrel
   m_TagString: Untagged
@@ -101,3 +102,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0684464, y: 2.9091246, z: 2.0684464}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &311578497126663186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132231470550887970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4e2b8b2b3a90a4c892795834d692a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
