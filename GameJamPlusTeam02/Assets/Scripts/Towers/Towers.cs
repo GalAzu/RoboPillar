@@ -13,7 +13,7 @@ public class Towers : MonoBehaviour
     [SerializeField]
     private float lightOff, lightOn;
     [SerializeField]private float lightFadeRate;
-    public int wasteLeftToLight;
+    public int wasteLeftToLight = 0;
     public int towerWaste;
     private TextMeshProUGUI towerUI;
     private bool towerIsLit;
@@ -28,13 +28,10 @@ public class Towers : MonoBehaviour
             {
                 wasteInRadius.Add(collider);
             }
-            else if(collider.tag == "Player")
-            {
-                ShowUI();
-            }
         }
         towerWaste = getWasteInRadiusCastColliders.Length;
         wasteLeftToLight = getWasteInRadiusCastColliders.Length;
+        UImanager.instance.towerWaste.text = wasteLeftToLight.ToString();
     }
 
     private void ShowUI()
@@ -55,15 +52,16 @@ public class Towers : MonoBehaviour
     }
     private void TurnLightOnAndOff()
     {
-        if (wasteInRadius.Count < 3)
+        if (wasteLeftToLight == 0)
         {
             light.intensity = Mathf.Lerp(light.intensity, lightOn, lightFadeRate); //LIGHT ON
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Light", gameObject);
         }
-        else if (wasteInRadius.Count > 3) 
+        else if (wasteLeftToLight > 0) 
         {
             light.intensity = Mathf.Lerp(light.intensity, lightOff, lightFadeRate);//LIGHT OFF
         } 
     }
+
 
 }

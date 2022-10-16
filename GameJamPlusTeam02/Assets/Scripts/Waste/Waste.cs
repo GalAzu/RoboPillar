@@ -19,6 +19,7 @@ public class Waste : MonoBehaviour , Icollectible
     {
         Destroy(gameObject);
         OnWasteCollected?.Invoke(wasteData);
+        UImanager.instance.garbageInventory.text += wasteData.quantityToAdd.ToString();
         towerToBelong.wasteInRadius.Remove(this.gameObject.GetComponent<Collider>());
         towerToBelong.wasteLeftToLight--;
     }

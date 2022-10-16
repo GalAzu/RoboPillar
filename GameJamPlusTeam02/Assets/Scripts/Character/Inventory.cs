@@ -8,6 +8,11 @@ public class Inventory : MonoBehaviour
     public Dictionary<WasteData, WasteInventory> wasteDictionary = new Dictionary<WasteData, WasteInventory>();
     public int totalcapacity;
     public int curCapacity;
+
+    private void Start()
+    {
+        UImanager.instance.garbageInventory.text = curCapacity.ToString();
+    }
     private void OnEnable()
     {
         Waste.OnWasteCollected += AddToInventory;
@@ -21,16 +26,17 @@ public class Inventory : MonoBehaviour
     {
         if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))
         {
-            if(curCapacity < totalcapacity)
+            if (curCapacity < totalcapacity)
             {
                 wasteItem.AddToStack();
                 curCapacity += wasteItem.stackSize;
+                UImanager.instance.garbageInventory.text = wasteItem.stackSize.ToString();
             }
             else
             {
                 Debug.Log("inventory overload");
-                    //Add sfx
-                    //UI indication for cacpacity
+                //Add sfx
+                //UI indication for cacpacity
             }
         }
         else
