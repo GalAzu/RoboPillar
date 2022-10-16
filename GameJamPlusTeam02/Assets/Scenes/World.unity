@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0068593253, g: 0.007285728, b: 0.007862948, a: 1}
+  m_IndirectSpecularColor: {r: 0.002553515, g: 0.0025420731, b: 0.0025229377, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1084,11 +1084,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harvestTime: 0
   curHarvestTime: 0
-  player: {fileID: 0}
-  rayDistance: 0
+  player: {fileID: 580548822}
+  rayDistance: 4
   rayMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+--- !u!114 &580548822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 580548809, guid: 6b149646dadf2b0419c8ebb0da1ce6fd, type: 3}
+  m_PrefabInstance: {fileID: 428445125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580548808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efb1394caec91e45bf4c2b3b82e1805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &580548826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580548808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65504600e3a879e4f89f630b6fb510e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildDistance: 4
+  objBuildID: 0
+  MetalWall: {fileID: 2067257031253108317, guid: d2c0adc6da522414cb6090e1cb3fa76e, type: 3}
+  buildTime: 0
 --- !u!1 &591173161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 69521579}
     m_Modifications:
+    - target: {fileID: -3535525490280459967, guid: 713611c6731cd5448897b0e2d632af80, type: 3}
+      propertyPath: wasteData
+      value: 
+      objectReference: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
     - target: {fileID: 1340027240222501071, guid: 713611c6731cd5448897b0e2d632af80, type: 3}
       propertyPath: m_RootOrder
       value: 19
