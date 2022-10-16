@@ -11,11 +11,8 @@ GameObject:
   - component: {fileID: 1647443992623215768}
   - component: {fileID: 2410338397066853181}
   - component: {fileID: 475069603290517495}
-<<<<<<< HEAD
   - component: {fileID: -8612771147474366107}
   - component: {fileID: 311578497126663186}
-=======
->>>>>>> main
   m_Layer: 7
   m_Name: WasteBarrel
   m_TagString: Untagged
@@ -92,7 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD
 --- !u!65 &-8612771147474366107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,5 +115,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
-=======
->>>>>>> main

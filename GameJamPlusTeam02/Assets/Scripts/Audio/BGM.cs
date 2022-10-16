@@ -6,7 +6,6 @@ using FMOD.Studio;
 
 public class BGM : MonoBehaviour
 {
-<<<<<<< HEAD
     public FMODUnity.EventReference musicPath;
     public EventInstance musicInstance;
 <<<<<<< Updated upstream
@@ -20,24 +19,11 @@ public class BGM : MonoBehaviour
         musicInstance = RuntimeManager.CreateInstance(musicPath);
         musicInstance.start();
         character = FindObjectOfType<ThirdPersonCharacter>();
-=======
-    public EventReference musicPath;
-   public EventInstance musicInst;
-    // Start is called before the first frame update
-    void Start()
-    {
-        musicInst = RuntimeManager.CreateInstance(musicPath);
-        musicInst.setParameterByName("Danger", 0f, false);
-        musicInst.start();
-
-
->>>>>>> main
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 =======
@@ -70,20 +56,4 @@ public class BGM : MonoBehaviour
     }
 
 >>>>>>> Stashed changes
-=======
-
-    }
-
-    public void MusicParameter()
-    {
-        musicInst.setParameterByName("Danger", 1f, false);
-    }
-
-
-    private void OnDestroy()
-    {
-        musicInst.release();
-        musicInst.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-    }
->>>>>>> main
 }
