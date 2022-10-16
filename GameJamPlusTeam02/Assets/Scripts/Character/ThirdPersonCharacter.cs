@@ -16,7 +16,8 @@ public class ThirdPersonCharacter : MonoBehaviour
     public Rigidbody rb;
     public bool onHarvest;
     public bool isBuilding;
-
+    public bool isChased;
+    public bool isPatrol;
 
     private void Awake()
     {

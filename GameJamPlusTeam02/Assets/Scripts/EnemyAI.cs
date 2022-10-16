@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     private BGM bgmScript;
     public NavMeshAgent agent;
     public Transform player;
+    public ThirdPersonCharacter character;
     public Transform soundPoint;
     public LayerMask groundMask, playerMask;
     private Animator anim;
@@ -26,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     public bool inSightRange;
     private object inBackRange;
 
+
     //sound state
     private float hearRange;
     private bool inHearingRange;
@@ -33,9 +35,14 @@ public class EnemyAI : MonoBehaviour
     public float caughtDistance;
     public float outOfSightDistance;
 
+
     void Awake()
     {
+<<<<<<< Updated upstream
         bgmScript = bgmObject.GetComponent<BGM>();
+=======
+        character = FindObjectOfType<ThirdPersonCharacter>();
+>>>>>>> Stashed changes
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
@@ -55,12 +62,12 @@ public class EnemyAI : MonoBehaviour
         if (inSightRange)
         {
             ChasePlayer();
-            bgmScript.Danger();
+            character.isChased = true;
         }
         if(!inSightRange)
         {
             Patroling();
-            bgmScript.SafeZone();
+            character.isPatrol = true;
         }
     }
     private void Patroling()
@@ -89,7 +96,11 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
+<<<<<<< Updated upstream
            
+=======
+            Destroy(character.gameObject);
+>>>>>>> Stashed changes
             Debug.Log("CAUGHT");
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
