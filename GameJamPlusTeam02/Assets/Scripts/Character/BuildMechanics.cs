@@ -62,6 +62,7 @@ public class BuildMechanics : MonoBehaviour
     {
         if(!player.isBuilding)
         {
+            //BUILD START
             Debug.Log("start corutine");
             player.isBuilding = true;
             player.rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -70,6 +71,7 @@ public class BuildMechanics : MonoBehaviour
             player.isBuilding = false;
             player.rb.constraints = RigidbodyConstraints.None;
             Debug.Log("finish corutine");
+            //BUILD FINISH
 
         }
     }

@@ -87,7 +87,6 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-            //ADD SFX FOR PLAYER DEATH
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             Debug.Log("CAUGHT");
         }
