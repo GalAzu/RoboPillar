@@ -58,6 +58,7 @@ public class Towers : MonoBehaviour
         if (wasteInRadius.Count < 3)
         {
             light.intensity = Mathf.Lerp(light.intensity, lightOn, lightFadeRate); //LIGHT ON
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Light", gameObject);
         }
         else if (wasteInRadius.Count > 3) 
         {

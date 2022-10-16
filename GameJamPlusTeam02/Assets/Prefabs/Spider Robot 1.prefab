@@ -567,7 +567,7 @@ MonoBehaviour:
   walkPointSet: 0
   walkPointRange: 70
   sightRange: 25.44
-  inSightRange: 0
+  inSightRange: 1
   caughtDistance: 0.96
   outOfSightDistance: 20
 --- !u!135 &3368968447491960841

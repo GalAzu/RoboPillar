@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+
     public GameObject bgmObject;
     private BGM bgmScript;
     public NavMeshAgent agent;
@@ -34,10 +35,11 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
+        bgmScript = bgmObject.GetComponent<BGM>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
-        bgmScript = bgmObject.GetComponent<BGM>();
+      
       
     }
 
@@ -87,8 +89,11 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
+           
             Debug.Log("CAUGHT");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
+            bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
         }
     }
 private void SerachWalkPoint()
