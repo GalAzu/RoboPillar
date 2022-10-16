@@ -9,11 +9,12 @@ public class EnemyAI : MonoBehaviour
     public NavMeshAgent agent;
 
     public Transform soundPoint;
-    public Transform playerTransform;
+    public Transform soundTransform;
     public LayerMask groundMask, playerMask;
+    private Animator anim;
     //Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    public bool walkPointSet;
     public float walkPointRange;
 
     //sight state
@@ -27,8 +28,8 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
-        playerTransform = FindObjectOfType<ThirdPersonCharacter>().transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,9 +40,17 @@ public class EnemyAI : MonoBehaviour
     }
     private void Patroling()
     {
-        if (!walkPointSet) SerachWalkPoint();
+        if (!walkPointSet) 
+        {
+            SerachWalkPoint();
+            anim.SetBool("isMoving" , true);
+        }
 
-        if (walkPointSet) agent.SetDestination(walkPoint);
+        if (walkPointSet)
+        {
+            agent.SetDestination(walkPoint);
+            anim.SetBool("isMoving", false);
+        } 
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1)
