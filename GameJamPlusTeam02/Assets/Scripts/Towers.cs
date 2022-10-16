@@ -10,18 +10,11 @@ public class Towers : MonoBehaviour
 
     private void Start()
     {
-        Collider[] getWasteInRadiusCastColliders = Physics.OverlapSphere(transform.position, towerDetectionRadius, wasteMask);
-        foreach(var collider in getWasteInRadiusCastColliders)
-        {
-            if(collider != null)
-            {
-                wasteInRadius.Add(collider);
-            }
-        }
+        var getWasteInRadiusCast = Physics.SphereCastAll(transform.position, towerDetectionRadius, Vector3.zero, wasteMask);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, towerDetectionRadius);
-        
     }
 }
