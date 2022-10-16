@@ -11,12 +11,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public float fmodParam;
     // Start is called before the first frame update
-    private void Update()
-    {
-        musicInstance.setParameterByName("Danger", 1f, false);
-        musicInstance.getParameterByName("Danger", out fmodParam);
-        print(fmodParam.ToString());
-    }
     void Start()
     {
         instance = this;

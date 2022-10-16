@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 82803
+  controlID: 85083
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 82779
+  controlID: 85084
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 82780
+  controlID: 85043
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,8 +224,8 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1c6e0000
+      scrollPos: {x: 0, y: 316}
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 0a81feffa08ffeff3491feffba98fefff0acfeff82d4feffd644ffff1a45ffff8646ffff0c47ffff4c4effffc64effffc854ffff3655ffff085dffffe65dffffe260ffffd061ffff2c98ffff8a9fffffdc9fffff4aacffff8cb6ffff04b7ffff46c5ffff82f9ffffc6f9ffff32fbffff746d0000ca6d000016a300003ca300008ca300008ca40000baaf0000b0e40000f2e40000d6ed0000deed0000e4ed000040ee000056ee00003c9a01006a9a0100829a0100909a010000b2010030bf010038bf01003ebf010068bf01007abf01009ebf0100b6bf0100
       m_RenameOverlay:
@@ -504,9 +504,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 50.92867, y: -15.393482, z: 12.089088}
+    m_Target: {x: 48.227234, y: -15.165676, z: 16.725939}
     speed: 2
-    m_Value: {x: 50.92867, y: -15.393482, z: 12.089088}
+    m_Value: {x: 48.227234, y: -15.165676, z: 16.725939}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -557,9 +557,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.18279728, y: 0.80157924, z: -0.3047493, w: -0.48081574}
   m_Size:
-    m_Target: 43.30977
+    m_Target: 21.726542
     speed: 2
-    m_Value: 43.30977
+    m_Value: 21.726542
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -787,7 +787,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: SPIDER
+    m_NameFilter: AUDIO
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -799,22 +799,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Audio
+    - Assets
     m_Globs: []
-    m_OriginalText: SPIDER
+    m_OriginalText: AUDIO
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Audio
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\galaz\Documents\GitHub\GameJamPlusTeam02\GameJamPlusTeam02
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 108}
-    m_SelectedIDs: 90730000
-    m_LastClickedID: 29584
-    m_ExpandedIDs: 00000000d8720000da720000f672000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: d8720000
+    m_LastClickedID: 29400
+    m_ExpandedIDs: 00000000d8720000da72000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -867,8 +867,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1c6e0000
-    m_LastClickedInstanceID: 28188
+    m_SelectedInstanceIDs: 3ebf0100668cfeff988dfeff
+    m_LastClickedInstanceID: 114494
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d6e6000028e90000ae760000
     m_RenameOverlay:
@@ -987,8 +987,8 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 648
+  m_LastInspectedObjectInstanceID: -95130
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

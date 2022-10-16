@@ -568,7 +568,7 @@ MonoBehaviour:
   walkPointRange: 70
   sightRange: 25.44
   inSightRange: 1
-  caughtDistance: 1.72
+  caughtDistance: 0.05
   outOfSightDistance: 20
 --- !u!135 &3368968447491960841
 SphereCollider:
