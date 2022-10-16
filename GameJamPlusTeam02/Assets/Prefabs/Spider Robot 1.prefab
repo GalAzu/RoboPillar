@@ -559,6 +559,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
+  bgmObject: {fileID: 3547344545473678073, guid: d210d31b3ba5f9440996017304b272b9, type: 3}
+  enemySteps: {fileID: 0}
   sightSphereCast: {fileID: 2814127106416007793}
   backSphereCast: {fileID: 5693359347597566851}
   walkPoint: {x: 0, y: 0, z: 0}

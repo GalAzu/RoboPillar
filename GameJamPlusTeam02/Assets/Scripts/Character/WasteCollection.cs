@@ -44,6 +44,7 @@ public class WasteCollection : MonoBehaviour
             yield return new WaitForSeconds(harvestTime);
             Debug.Log("start finish loot");
             action();
+        
         }
     }
 
