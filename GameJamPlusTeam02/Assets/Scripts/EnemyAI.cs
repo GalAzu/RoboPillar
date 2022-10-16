@@ -122,11 +122,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-<<<<<<< Updated upstream
-           
-=======
             Destroy(character.gameObject);
->>>>>>> Stashed changes
             Debug.Log("CAUGHT");
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
