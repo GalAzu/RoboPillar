@@ -1431,6 +1431,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FilterRod (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6913401761873602723, guid: a881c8540077435418e2e59444be36cc, type: 3}
+      propertyPath: wasteMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913401761873602723, guid: a881c8540077435418e2e59444be36cc, type: 3}
+      propertyPath: towerDetectionRadius
+      value: 278.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a881c8540077435418e2e59444be36cc, type: 3}
 --- !u!1 &789503842
@@ -2658,6 +2666,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1340027240222501071, guid: 713611c6731cd5448897b0e2d632af80, type: 3}
   m_PrefabInstance: {fileID: 1029199969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1526136999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526137001}
+  - component: {fileID: 1526137000}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1526137000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526136999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031a57adc81a2ad43a4dc6d78ffec9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towersOnMap: 0
+--- !u!4 &1526137001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526136999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -68.899994, y: 5.2627907, z: 70.100006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1558062541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1340027240222501071, guid: 713611c6731cd5448897b0e2d632af80, type: 3}
@@ -3191,6 +3244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031a57adc81a2ad43a4dc6d78ffec9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towersOnMap: 0
 --- !u!1001 &1789744344
 PrefabInstance:
   m_ObjectHideFlags: 0

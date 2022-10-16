@@ -7,7 +7,7 @@ public class Towers : MonoBehaviour
     [SerializeField] private float towerDetectionRadius;
     [SerializeField] public List<Collider> wasteInRadius = new List<Collider>();
     [SerializeField] private LayerMask wasteMask;
-    [SerializeField] Light light;
+    [SerializeField] new Light light;
     [SerializeField]
     private float lightOff, lightOn;
     [SerializeField]private float lightFadeRate;
@@ -35,7 +35,6 @@ public class Towers : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, towerDetectionRadius);
         
     }
-
     private void TurnLightOnAndOff()
     {
         if (wasteInRadius.Count > 3) light.intensity = Mathf.Lerp(light.intensity, lightOn, lightFadeRate);

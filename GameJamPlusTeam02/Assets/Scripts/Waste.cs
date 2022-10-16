@@ -13,11 +13,13 @@ public class Waste : MonoBehaviour , Icollectible
     private void Awake()
     {
         wasteData.name = wasteData._wasteType.ToString();
+        towerToBelong = GetComponentInParent<Towers>();
     }
     public void Collect()
     {
         Destroy(gameObject);
         OnWasteCollected?.Invoke(wasteData);
         towerToBelong.wasteInRadius.Remove(this.gameObject.GetComponent<Collider>());
+        towerToBelong.wasteLeftToLight--;
     }
 }
