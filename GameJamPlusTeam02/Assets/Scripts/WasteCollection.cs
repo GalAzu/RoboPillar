@@ -8,15 +8,14 @@ public class WasteCollection : MonoBehaviour
     [SerializeField]private float harvestTime;
     [SerializeField]private float curHarvestTime;
     [SerializeField]
-    private bool onHarvest;
-    private Rigidbody rb;
+    private ThirdPersonCharacter player;
     public float rayDistance;
     [SerializeField] private LayerMask rayMask;
     Icollectible collectible;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        player = GetComponent<ThirdPersonCharacter>();
     }
     private void Update()
     {
@@ -29,7 +28,7 @@ public class WasteCollection : MonoBehaviour
             collectible = rayHit.collider.gameObject.GetComponent<Icollectible>();
             if (collectible != null && Input.GetKeyDown(KeyCode.Mouse1))
             {
-                if (!onHarvest) StartCoroutine(Harvest(FinishCollecting));
+                if (!player.onHarvest) StartCoroutine(Harvest(FinishCollecting));
             }
         }
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * rayDistance);
@@ -37,10 +36,10 @@ public class WasteCollection : MonoBehaviour
     private IEnumerator Harvest(Action action)
     {
         Debug.Log("corutine started");
-        if(!onHarvest)
+        if(!player.onHarvest)
         {
-            onHarvest = true;
-            rb.constraints = RigidbodyConstraints.FreezePosition;
+            player.onHarvest = true;
+            player.rb.constraints = RigidbodyConstraints.FreezeAll;
             yield return new WaitForSeconds(harvestTime);
             Debug.Log("start finish loot");
             action();
@@ -49,8 +48,8 @@ public class WasteCollection : MonoBehaviour
 
     private void FinishCollecting()
     {
-        onHarvest = false;
+        player.onHarvest = false;
         collectible.Collect();
-        rb.constraints = RigidbodyConstraints.None;
+        player.rb.constraints = RigidbodyConstraints.None;
     }
 }
