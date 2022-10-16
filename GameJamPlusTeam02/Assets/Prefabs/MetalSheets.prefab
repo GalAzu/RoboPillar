@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasteData: {fileID: 0}
+  towerToBelong: {fileID: 0}
 --- !u!65 &4363735875453319480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1517053, y: 3.0853724, z: 2.9019878}
-  m_Center: {x: 0.27094385, y: 1.5426862, z: -0.45099398}
+  m_Size: {x: 2.1517053, y: 4.144529, z: 2.9019878}
+  m_Center: {x: 0.27094385, y: 2.0722644, z: -0.45099398}
