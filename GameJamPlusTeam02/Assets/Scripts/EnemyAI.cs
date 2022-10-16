@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+   public GameObject bgm;
+    private BGM bgmscript;
     public NavMeshAgent agent;
     public Transform player;
     public Transform soundPoint;
@@ -33,18 +35,30 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
+        bgmscript = bgm.GetComponent<BGM>();
     }
 
     // Update is called once per frame
     void Update()
     {
         SightAlert();
+       
     }
     private void SightAlert()
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
-        if (inSightRange) ChasePlayer();
-        if(!inSightRange) Patroling();
+        if (inSightRange)
+        {
+            ChasePlayer();
+            bgmscript.MusicParameter();
+        }
+        if (!inSightRange)
+        {
+            Patroling();
+            {
+                bgmscript.musicInst.setParameterByName("Danger", 0f, false);
+            }
+        }
     }
     private void Patroling()
     {
@@ -68,6 +82,8 @@ public class EnemyAI : MonoBehaviour
     {
         print("CHASE PLAYER");
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
+        
+
 
         agent.SetDestination(player.position);
         if(agent.remainingDistance < 7)
