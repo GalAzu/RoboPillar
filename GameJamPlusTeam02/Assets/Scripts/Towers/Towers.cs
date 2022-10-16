@@ -34,13 +34,6 @@ public class Towers : MonoBehaviour
         UImanager.instance.towerWaste.text = wasteLeftToLight.ToString();
     }
 
-    private void ShowUI()
-    {
-        if (!towerIsLit)
-            towerUI.text = wasteLeftToLight.ToString() + "/" + towerWaste;
-        else towerUI.text = "Tower is Lit!";
-    }
-
     private void Update()
     {
         TurnLightOnAndOff();
@@ -62,6 +55,4 @@ public class Towers : MonoBehaviour
             light.intensity = Mathf.Lerp(light.intensity, lightOff, lightFadeRate);//LIGHT OFF
         } 
     }
-
-
 }

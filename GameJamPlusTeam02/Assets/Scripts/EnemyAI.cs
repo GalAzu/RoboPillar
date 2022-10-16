@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
 public class EnemyAI : MonoBehaviour
 {
 
@@ -89,8 +89,8 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
-           
-            Debug.Log("CAUGHT");
+
+            SceneManager.LoadScene(2);
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
             bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 

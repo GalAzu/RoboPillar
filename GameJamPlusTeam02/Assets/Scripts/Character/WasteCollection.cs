@@ -12,10 +12,12 @@ public class WasteCollection : MonoBehaviour
     public float rayDistance;
     [SerializeField] private LayerMask rayMask;
     Icollectible collectible;
+    Inventory inventory;
 
     private void Start()
     {
         player = GetComponent<ThirdPersonCharacter>();
+        inventory = FindObjectOfType<Inventory>();
     }
     private void Update()
     {
@@ -55,5 +57,6 @@ public class WasteCollection : MonoBehaviour
         player.onHarvest = false;
         collectible.Collect();
         player.rb.constraints = RigidbodyConstraints.None;
+        UImanager.instance.garbageInventory.text = inventory.curCapacity + "/" + inventory.totalcapacity;
     }
 }

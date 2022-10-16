@@ -17,6 +17,7 @@ public class WasteInventory
     public void AddToStack()
     {
         stackSize += wasteData.quantityToAdd;
+
     }
     public void RemoveFromStack()
     {

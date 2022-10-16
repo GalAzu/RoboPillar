@@ -11,54 +11,46 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        UImanager.instance.garbageInventory.text = curCapacity.ToString();
+        UImanager.instance.garbageInventory.text = curCapacity.ToString() + "/" + totalcapacity.ToString();
     }
     private void OnEnable()
     {
         Waste.OnWasteCollected += AddToInventory;
     }
-    private void OnDisable()
-    {
-        Waste.OnWasteCollected -= AddToInventory;
-    }
-
-    public void AddToInventory(WasteData wasteData)
-    {
-        if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))
+        private void OnDisable()
         {
-            if (curCapacity < totalcapacity)
+            Waste.OnWasteCollected -= AddToInventory;
+        }
+    
+        public void AddToInventory(WasteData wasteData)
+        {
+            if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))
             {
-                wasteItem.AddToStack();
-                curCapacity += wasteItem.stackSize;
-                UImanager.instance.garbageInventory.text = wasteItem.stackSize.ToString();
+                if (curCapacity < totalcapacity)
+                {
+                    wasteItem.AddToStack();
+                }
             }
             else
             {
-                Debug.Log("inventory overload");
-                //Add sfx
-                //UI indication for cacpacity
+                WasteInventory newWaste = new WasteInventory(wasteData);
+                inventory.Add(newWaste);
+                wasteDictionary.Add(wasteData, newWaste);
             }
         }
-        else
+        public void RemoveFromInventory(WasteData wasteData)
         {
-            WasteInventory newWaste = new WasteInventory(wasteData);
-            inventory.Add(newWaste);
-            wasteDictionary.Add(wasteData, newWaste);
-        }
-    }
-    public void RemoveFromInventory(WasteData wasteData)
-    {
-        if (wasteDictionary.TryGetValue(wasteData , out WasteInventory wasteItem))
-        {
-            wasteItem.RemoveFromStack();
-            if(wasteItem.stackSize == 0)
+            if (wasteDictionary.TryGetValue(wasteData, out WasteInventory wasteItem))
             {
-                inventory.Remove(wasteItem);
-                wasteDictionary.Remove(wasteData);
-                curCapacity -= wasteItem.stackSize;
-                //Ui indication for capacity
+                wasteItem.RemoveFromStack();
+                if (wasteItem.stackSize == 0)
+                {
+                    inventory.Remove(wasteItem);
+                    wasteDictionary.Remove(wasteData);
+                    curCapacity -= wasteItem.stackSize;
+                    //Ui indication for capacity
+                }
             }
         }
-    }
-
+    
 }

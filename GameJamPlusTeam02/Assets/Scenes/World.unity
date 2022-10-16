@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoboPillar
       objectReference: {fileID: 0}
+    - target: {fileID: 4411147604104500390, guid: 6b149646dadf2b0419c8ebb0da1ce6fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b149646dadf2b0419c8ebb0da1ce6fd, type: 3}
 --- !u!1001 &520097274
@@ -676,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 562568071731343982, guid: d1dd5c6ce6b273a49b79660617ae5161, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7408519
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 562568071731343982, guid: d1dd5c6ce6b273a49b79660617ae5161, type: 3}
       propertyPath: m_LocalPosition.z
@@ -743,11 +747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d58c82b61e9f248994460402696859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - name: 
-    wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
-    stackSize: 5
-  totalcapacity: 0
+  inventory: []
+  totalcapacity: 10
   curCapacity: 0
 --- !u!114 &580548821
 MonoBehaviour:
@@ -1395,6 +1396,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3212427219918722040, guid: a8048e466537d45458ae2b23cd828a15, type: 3}
   m_PrefabInstance: {fileID: 5126053659716915756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1310068630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 280416175810202196, guid: a91a7b41acdfd514abcc34de7d476976, type: 3}
+  m_PrefabInstance: {fileID: 1467105960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317643442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 280416175810202196, guid: a91a7b41acdfd514abcc34de7d476976, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 280416175810202199, guid: a91a7b41acdfd514abcc34de7d476976, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1738,6 +1748,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 280416175810202192, guid: a91a7b41acdfd514abcc34de7d476976, type: 3}
   m_PrefabInstance: {fileID: 1467105960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1467105966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310068630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e12b662832377e43a64c77f5e48c61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526136999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238602655525193233, guid: 4bfe80fe48ec404409e6895010660728, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.686481
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 6238602655525193233, guid: 4bfe80fe48ec404409e6895010660728, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2207,7 +2229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6238602655525193233, guid: 4bfe80fe48ec404409e6895010660728, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.065858
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6238602655525193233, guid: 4bfe80fe48ec404409e6895010660728, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2260,7 +2282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3772636244199168095, guid: ed776bbd058b04e44999d8746972e45e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.769
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3772636244199168095, guid: ed776bbd058b04e44999d8746972e45e, type: 3}
       propertyPath: m_LocalPosition.z
