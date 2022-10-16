@@ -16,14 +16,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public Vector3 curRotation;
     public bool lockCursor;
 
-    private void Start()
-    {
-        if(lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-    }
+
     private void LateUpdate()
     {
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;

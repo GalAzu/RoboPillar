@@ -14,7 +14,6 @@ public class Waste : MonoBehaviour , Icollectible
     private void Awake()
     {
         wasteData.name = wasteData._wasteType.ToString();
-        towerToBelong = GetComponentInParent<Towers>();
         inventory = FindObjectOfType<Inventory>();
     }
     public void Collect()

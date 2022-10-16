@@ -300,7 +300,11 @@ public class MainMenuManager : MonoBehaviour
 
     #endregion
 
-
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     #region Graphics & Resolution Settings
 
     public void SetQuality(int _qualityIndex)

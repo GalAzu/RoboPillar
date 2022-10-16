@@ -8,7 +8,6 @@ public class EnemyAI : MonoBehaviour
 {
 
     public GameObject bgmObject;
-    private BGM bgmScript;
     public NavMeshAgent agent;
     public Transform player;
     public Transform soundPoint;
@@ -35,7 +34,6 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
-        bgmScript = bgmObject.GetComponent<BGM>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
@@ -46,21 +44,20 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SightAlert();
+        AIstate();
     }
-    private void SightAlert()
+    private void AIstate()
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
         inBackRange = Physics.CheckSphere(backSphereCast.position, sightRange, playerMask);
         if (inSightRange)
         {
             ChasePlayer();
-            bgmScript.Danger();
         }
         if(!inSightRange)
         {
             Patroling();
-            bgmScript.SafeZone();
+            AudioManager.instance.SafeZone();
         }
     }
     private void Patroling()
@@ -85,14 +82,15 @@ public class EnemyAI : MonoBehaviour
     {
         print("CHASE PLAYER");
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
+        AudioManager.instance.Danger();
 
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
         {
 
-            SceneManager.LoadScene(2);
+            GameManager.instance.GameOver();
             FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
-            bgmScript.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            AudioManager.instance.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         }
     }

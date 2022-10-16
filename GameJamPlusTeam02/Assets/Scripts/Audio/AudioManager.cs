@@ -4,27 +4,29 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class BGM : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public FMODUnity.EventReference musicPath;
     public EventInstance musicInstance;
+    public static AudioManager instance;
+    public float fmodParam;
     // Start is called before the first frame update
+    private void Update()
+    {
+        musicInstance.setParameterByName("Danger", 1f, false);
+        musicInstance.getParameterByName("Danger", out fmodParam);
+        print(fmodParam.ToString());
+    }
     void Start()
     {
+        instance = this;
         musicInstance = RuntimeManager.CreateInstance(musicPath);
         musicInstance.start();
+        musicInstance.setParameterByName("Danger", 0f, false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void Danger()
     {
         musicInstance.setParameterByName("Danger", 1f, false);
-
     }
 
     public void SafeZone()

@@ -26,6 +26,7 @@ public class Towers : MonoBehaviour
         {
             if(collider != null)
             {
+                collider.GetComponent<Waste>().towerToBelong = this;
                 wasteInRadius.Add(collider);
             }
         }
