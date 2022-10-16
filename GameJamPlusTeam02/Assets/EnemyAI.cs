@@ -72,6 +72,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(player.position);
         if(agent.remainingDistance < 7)
         {
+            //ADD SFX FOR PLAYER DEATH
             Debug.Log("CAUGHT");
         }
 
