@@ -175,8 +175,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772636244199168095}
+<<<<<<< HEAD
   - component: {fileID: -6466307596127732342}
   - component: {fileID: 83124672861104740}
+=======
+>>>>>>> main
   m_Layer: 7
   m_Name: ScrapPile2
   m_TagString: Untagged
@@ -203,6 +206,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!65 &-6466307596127732342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -230,6 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
   towerToBelong: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1 &5041476329815432839
 GameObject:
   m_ObjectHideFlags: 0

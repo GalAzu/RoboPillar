@@ -6,9 +6,14 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+<<<<<<< HEAD
 
     public GameObject bgmObject;
     private BGM bgmScript;
+=======
+   public GameObject bgm;
+    private BGM bgmscript;
+>>>>>>> main
     public NavMeshAgent agent;
     public Transform player;
     public ThirdPersonCharacter character;
@@ -46,18 +51,24 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
+<<<<<<< HEAD
       
       
+=======
+        bgmscript = bgm.GetComponent<BGM>();
+>>>>>>> main
     }
 
     // Update is called once per frame
     void Update()
     {
         SightAlert();
+       
     }
     private void SightAlert()
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
+<<<<<<< HEAD
         inBackRange = Physics.CheckSphere(backSphereCast.position, sightRange, playerMask);
         if (inSightRange)
         {
@@ -68,6 +79,19 @@ public class EnemyAI : MonoBehaviour
         {
             Patroling();
             character.isPatrol = true;
+=======
+        if (inSightRange)
+        {
+            ChasePlayer();
+            bgmscript.MusicParameter();
+        }
+        if (!inSightRange)
+        {
+            Patroling();
+            {
+                bgmscript.musicInst.setParameterByName("Danger", 0f, false);
+            }
+>>>>>>> main
         }
     }
     private void Patroling()
@@ -92,6 +116,8 @@ public class EnemyAI : MonoBehaviour
     {
         print("CHASE PLAYER");
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
+        
+
 
         agent.SetDestination(player.position);
         if(agent.remainingDistance < caughtDistance)
