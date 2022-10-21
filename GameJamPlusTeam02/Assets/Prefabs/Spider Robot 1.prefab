@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341144210436580507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.19, y: 0, z: 17.02}
+  m_LocalPosition: {x: -1.74, y: 0, z: 3.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,6 +256,37 @@ Transform:
   m_Father: {fileID: 3212427219918722040}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556317856353463369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5693359347597566851}
+  m_Layer: 0
+  m_Name: backSpherePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5693359347597566851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556317856353463369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.36, y: 0, z: 2.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3212427219918722040}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141423249532586860
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +461,7 @@ GameObject:
   - component: {fileID: 8823951751166085506}
   - component: {fileID: 5776469532201520350}
   - component: {fileID: 494739495515256055}
+  - component: {fileID: 3368968447491960841}
   m_Layer: 0
   m_Name: Spider Robot 1
   m_TagString: Untagged
@@ -445,8 +477,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2873020747326769474}
   m_LocalRotation: {x: 0, y: 0.22235687, z: 0, w: 0.97496533}
-  m_LocalPosition: {x: -43.407, y: -1.563, z: -52.04}
-  m_LocalScale: {x: 1.4199998, y: 1.42, z: 1.4199998}
+  m_LocalPosition: {x: -43.407, y: -1.563, z: -52.03}
+  m_LocalScale: {x: 1.4199996, y: 1.42, z: 1.4199996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1370506482827550163}
@@ -461,6 +493,7 @@ Transform:
   - {fileID: 3737390064966749851}
   - {fileID: 2598906981701677488}
   - {fileID: 2814127106416007793}
+  - {fileID: 5693359347597566851}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 25.695, z: 0}
@@ -493,9 +526,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 2873020747326769474}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 4
+  m_Radius: 0.89
+  m_Speed: 4.11
+  m_Acceleration: 5.68
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -518,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20619e21f4956bf45b95cd90d832948e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmObject: {fileID: 3547344545473678073, guid: d210d31b3ba5f9440996017304b272b9, type: 3}
   agent: {fileID: 0}
   player: {fileID: 0}
   soundPoint: {fileID: 0}
@@ -528,13 +562,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   sightSphereCast: {fileID: 2814127106416007793}
+  backSphereCast: {fileID: 5693359347597566851}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
-  walkPointRange: 70
-  sightRange: 20.38
-  inSightRange: 0
+  walkPointRange: 70.7
+  sightRange: 16.2
+  inSightRange: 1
   caughtDistance: 1
-  outOfSightDistance: 20
+  outOfSightDistance: 16.6
+--- !u!135 &3368968447491960841
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873020747326769474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3060530859533302578
 GameObject:
   m_ObjectHideFlags: 0

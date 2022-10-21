@@ -11,8 +11,13 @@ GameObject:
   - component: {fileID: 1340027240222501071}
   - component: {fileID: 2681717903681660778}
   - component: {fileID: 203672917447332768}
+<<<<<<< HEAD
   - component: {fileID: -2064782337776820459}
   - component: {fileID: -3535525490280459967}
+=======
+  - component: {fileID: 2557170576828583424}
+  - component: {fileID: 4363735875453319480}
+>>>>>>> LATEST
   m_Layer: 7
   m_Name: MetalSheets
   m_TagString: Untagged
@@ -27,9 +32,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860948719860413045}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3660955, y: -0.19900024, z: 1.4356958}
-  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +90,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!65 &-2064782337776820459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -99,6 +105,9 @@ BoxCollider:
   m_Size: {x: 2.1517055, y: 2.63, z: 2.9}
   m_Center: {x: 0.2709439, y: 1.32, z: -0.45099398}
 --- !u!114 &-3535525490280459967
+=======
+--- !u!114 &2557170576828583424
+>>>>>>> LATEST
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,3 +120,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasteData: {fileID: 11400000, guid: 45977a8e0ea34c143a1638e56c8183e1, type: 2}
+<<<<<<< HEAD
+=======
+  towerToBelong: {fileID: 0}
+--- !u!65 &4363735875453319480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860948719860413045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1517053, y: 4.144529, z: 2.9019878}
+  m_Center: {x: 0.27094385, y: 2.0722644, z: -0.45099398}
+>>>>>>> LATEST
