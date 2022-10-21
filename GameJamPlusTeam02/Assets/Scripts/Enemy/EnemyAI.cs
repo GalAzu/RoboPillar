@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     public bool inSightRange;
     private object inBackRange;
 
-    //sound state
+    //state stats
     private float hearRange;
     private bool inHearingRange;
     private int soundMask;
@@ -37,11 +37,7 @@ public class EnemyAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<ThirdPersonCharacter>().transform;
-      
-      
     }
-
-    // Update is called once per frame
     void Update()
     {
         AIstate();
@@ -50,47 +46,31 @@ public class EnemyAI : MonoBehaviour
     {
         inSightRange = Physics.CheckSphere(sightSphereCast.position, sightRange, playerMask);
         inBackRange = Physics.CheckSphere(backSphereCast.position, sightRange, playerMask);
-        if (inSightRange)
-        {
-            ChasePlayer();
-        }
-        if(!inSightRange)
-        {
-            Patroling();
-            AudioManager.instance.SafeZone();
-        }
+        if (inSightRange) ChasePlayer();
+        if (!inSightRange) Patroling();
     }
     private void Patroling()
     {
         if (!walkPointSet)
         {
+            AudioManager.instance.SafeZone();
             SerachWalkPoint();
             anim.SetBool("isMoving", true);
         }
-
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
             anim.SetBool("isMoving", false);
         }
-
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1)
             walkPointSet = false;
     }
     private void ChasePlayer()
     {
-        print("CHASE PLAYER");
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
         AudioManager.instance.Danger();
-
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), Time.deltaTime);
         agent.SetDestination(player.position);
-        if(agent.remainingDistance < caughtDistance)
-        {
-            GameManager.instance.GameOver();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
-            AudioManager.instance.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        }
     }
 private void SerachWalkPoint()
     {
@@ -111,5 +91,15 @@ private void SerachWalkPoint()
         inHearingRange = Physics.CheckSphere(transform.position, hearRange, soundMask);
         agent.SetDestination(soundPoint.position);
         transform.LookAt(soundPoint);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Player")
+        {
+            GameManager.instance.GameOver();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/detected or game over");
+            AudioManager.instance.musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        }
     }
 }

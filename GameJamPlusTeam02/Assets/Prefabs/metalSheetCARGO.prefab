@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2557170576828583424}
   - component: {fileID: 4363735875453319480}
   m_Layer: 7
-  m_Name: MetalSheets
+  m_Name: metalSheetCARGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1860948719860413045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3660955, y: -0.19900024, z: 1.4356958}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

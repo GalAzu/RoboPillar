@@ -11,10 +11,12 @@ public class BuildMechanics : MonoBehaviour
     [SerializeField] private int objBuildID;
     public GameObject MetalWall;
     public float buildTime;
+    public WasteCollection wasteCol;
     private void Start()
     {
         inventory = FindObjectOfType<Inventory>();
         player = FindObjectOfType<ThirdPersonCharacter>();
+        wasteCol = FindObjectOfType<WasteCollection>();
     }
     private void Update()
     {
@@ -35,7 +37,7 @@ public class BuildMechanics : MonoBehaviour
                 case (1):
                     if (inventory.inventory.Contains(GetWasteInventoryItem(WasteData.wasteType.MetalSheet))
                          &&
-                        GetWasteInventoryItem(WasteData.wasteType.MetalSheet).stackSize >= 2)
+                        GetWasteInventoryItem(WasteData.wasteType.MetalSheet).stackSize >= 3)
                     {
                         StartCoroutine(BuildStart()) ;
                     }
@@ -73,9 +75,7 @@ public class BuildMechanics : MonoBehaviour
             player.rb.constraints = RigidbodyConstraints.None;
             Debug.Log("finish corutine");
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Wall", gameObject);
-            //BUILD FINISH
-
-
         }
     }
 }
+

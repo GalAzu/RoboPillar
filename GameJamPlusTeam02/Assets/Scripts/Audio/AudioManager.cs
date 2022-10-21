@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
         musicInstance = RuntimeManager.CreateInstance(musicPath);
         musicInstance.start();
         musicInstance.setParameterByName("Danger", 0f, false);
+        Invoke("Danger", 9);
     }
     public void Danger()
     {
@@ -27,4 +28,5 @@ public class AudioManager : MonoBehaviour
     {
         musicInstance.setParameterByName("Danger", 0f, false);
     }
+    
 }

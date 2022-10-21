@@ -13,11 +13,16 @@ public class WasteCollection : MonoBehaviour
     [SerializeField] private LayerMask rayMask;
     Icollectible collectible;
     Inventory inventory;
+    public Transform cargo1, cargo2;
+    public GameObject metalSheetsForCargo;
+    public int cargo1Capacity;
+    public int cargo2Capacity;
 
     private void Start()
     {
         player = GetComponent<ThirdPersonCharacter>();
         inventory = FindObjectOfType<Inventory>();
+
     }
     private void Update()
     {
@@ -50,7 +55,6 @@ public class WasteCollection : MonoBehaviour
         
         }
     }
-
     private void FinishCollecting()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Trash clean");
