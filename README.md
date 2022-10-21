@@ -1,5 +1,5 @@
 # GameJamPlus2022 - RoboPillar
-Robopillar is a great game about our fading world, Play a small robot in a dieing world, that try to recycle to save what's left of it.
+Robopillar is a great game about our fading world, Play a small robot in a dieing world, do your way between malicious robot and clean your areas, to light up the air-pollution-filter-towers.
 
 On itch.io:  https://lddevs.itch.io/robopillar
 
