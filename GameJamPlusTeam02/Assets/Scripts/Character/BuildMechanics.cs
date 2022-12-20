@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class BuildMechanics : MonoBehaviour
 {
-    ThirdPersonCharacter player;
-    public float buildDistance;
+
+    //REFACTOR OBJECTS POOLING FOR BUILDING, HOW THE BUILD MECHANICS WORKS AND WHY? GET DEEPER INTO THE MECHANICS, ITS USE, AND ITS WAY OF INETRACTING
+    // REFACTOR AUDIO
+    private ThirdPersonCharacter player;
+    [SerializeField]
+    private float buildDistance;
     private Inventory inventory;
     [SerializeField] private int objBuildID;
-    public GameObject MetalWall;
+    [SerializeField]
+    private GameObject MetalWall;
     public float buildTime;
     public WasteCollection wasteCol;
     private void Start()

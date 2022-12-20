@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +18,13 @@ public class Towers : MonoBehaviour
     private TextMeshProUGUI towerUI;
     private bool towerIsLit;
 
+    //Refactor Light emission, look and general feeling
+
     private void Start()
     {
         light = GetComponent<Light>();
         Collider[] getWasteInRadiusCastColliders = Physics.OverlapSphere(transform.position, towerDetectionRadius, wasteMask);
+        
         foreach(var collider in getWasteInRadiusCastColliders)
         {
             if(collider != null)
